@@ -7,7 +7,11 @@ function init() {
 
 function doSomething(event) {
   event.preventDefault();
-  const displayNum = this.innerText(".");
-  doSomething
-
+  let displayNum = this.innerText;
+  console.log(displayNum);
+  let displayOnScreen = document.querySelector(".calculatorDisplay");
+  console.log(typeof displayOnScreen.innerText);
+  if (displayOnScreen.innerText === 0) {
+  } else {
+  }
 }
