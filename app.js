@@ -1,4 +1,8 @@
-window.onload = init;
+let storeData = 'blank'
+let showData = ''
+let operData = ''
+
+window.onload = init()
 
 function init() {
   const oneNumber = document.querySelectorAll(".keyNumbers");
@@ -19,13 +23,40 @@ function calculate(event) {
 
 function doSomething(event) {
   event.preventDefault();
-  let displayNum = this.innerText;
-  console.log(displayNum);
+  showData += event.target.innerText;
+  console.log(showData);
   let displayOnScreen = document.querySelector(".calculatorDisplay");
   console.log(typeof displayOnScreen.innerText);
-  if (displayOnScreen.innerText === "0") {
-    displayOnScreen.innerText = displayNum;
-  } else {
-    displayOnScreen.innerText += displayNum;
+  displayOnScreen.innerText = showData;
   }
+
+function thingForOper (event) {
+  event.preventDefault();
+  let activeOper = event.target.innerText;
+  console.log(activeOper);
+  switch(symbol){
+  case '+':
+    activeOper += parseFloat(showData)
+    result.textContent = activeOper
+    showData = activeOper.toString()
+    activeOper = ''
+    break;
+  case '-':
+      activeOper += parseFloat(showData)
+      result.textContent = activeOper
+      showData = activeOper.toString()
+      activeOper = ''
+    break;
+  case '/':
+      activeOper += parseFloat(showData)
+      result.textContent = activeOper
+      showData = activeOper.toString()
+      activeOper = ''
+    break;
+  case '*':
+      activeOper += parseFloat(showData)
+      result.textContent = activeOper
+      showData = activeOper.toString()
+      activeOper = ''
+}
 }
